@@ -186,6 +186,9 @@ SpriteMorph.prototype.init = function(globals) {
 SpriteMorph.prototype.categories.push('arduino');
 SpriteMorph.prototype.blockColor['arduino'] = new Color(64, 136, 182);
 
+SpriteMorph.prototype.categories.push('bear');
+SpriteMorph.prototype.blockColor['bear'] = new Color(64, 136, 182);
+
 SpriteMorph.prototype.originalInitBlocks = SpriteMorph.prototype.initBlocks;
 SpriteMorph.prototype.initBlocks = function() {
 	
@@ -249,11 +252,33 @@ SpriteMorph.prototype.initBlocks = function() {
 		spec: 'set PWM pin %pwmPin to %n'
 	};
 
+	this.blocks.bearLeftPawWrite
+	{
+		only: SpriteMorph,
+		type: 'command',
+		category: 'bear',
+		spec: 'set %leftPaw to %pawValue',
+		defaults: ['180']
+	};
+	this.blocks.bearRightPawWrite =
+	{
+		type: 'command',
+		category: 'bear',
+		spec: 'set %rightPaw to %pawValue',
+		defaults: ['180']
+	};
+
+	this.blocks.bearDoWait =
+	{
+		type: 'command',
+		category: 'bear',
+		spec: 'wait %n secs',
+		defaults: [1]
+	};
+
 }
 
 SpriteMorph.prototype.initBlocks();
-
-// blockTemplates proxy
 
 SpriteMorph.prototype.originalBlockTemplates = SpriteMorph.prototype.blockTemplates;
 SpriteMorph.prototype.blockTemplates = function(category) {
@@ -300,6 +325,12 @@ SpriteMorph.prototype.blockTemplates = function(category) {
         blocks.push(blockBySelector('reportAnalogReading'));
         blocks.push(blockBySelector('reportDigitalReading'));
 	};
+
+	if (category === 'bear') {
+		blocks.push(blockBySelector('bearLeftPawWrite'));
+		blocks.push(blockBySelector('bearRightPawWrite'));
+		blocks.push(blockBySelector('bearDoWait'));
+	}
 
 	return blocks;
 }
