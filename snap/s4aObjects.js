@@ -197,6 +197,7 @@ SpriteMorph.prototype.categories =
         'variables',
         'lists',
 		'arduino',
+        'bear',
         'other'
     ];
 
@@ -211,6 +212,7 @@ SpriteMorph.prototype.blockColor = {
     variables : new Color(243, 118, 29),
     lists : new Color(217, 77, 17),
 	arduino: new Color(64, 136, 182),
+    bear: new Color(64, 136, 182),
     other: new Color(150, 150, 150)
 };
 
@@ -289,15 +291,35 @@ function overridenBlockTemplates(category) {
 		category: 'arduino',
 		spec: 'set servo %servoPin to %servoValue'
 	};
-
-	SpriteMorph.prototype.blocks.pwmWrite =
+	SpriteMorph.prototype.blocks.bearLeftPawWrite =
 	{
 		type: 'command',
-		category: 'arduino',
-		spec: 'set PWM pin %pwmPin to %n'
+		category: 'bear',
+		spec: 'set %leftPaw to %pawValue',
+		defaults: ['180']
+	};
+	SpriteMorph.prototype.blocks.bearRightPawWrite =
+	{
+		type: 'command',
+		category: 'bear',
+		spec: 'set %rightPaw to %pawValue',
+		defaults: ['180']
+	};
+	SpriteMorph.prototype.blocks.pwmWrite =
+	{
+	type: 'command',
+		category: 'bear',
+		spec: 'wait %n secs',
+		defaults: [1]
 	};
 
-
+	SpriteMorph.prototype.blocks.bearDoWait =
+	{
+	type: 'command',
+		category: 'bear',
+		spec: 'wait %n secs',
+		defaults: [1]
+	};
 
 	// *this* will either be StageMorph or SpriteMorph
 	var blocks = this.originalBlockTemplates(category); 
@@ -321,6 +343,12 @@ function overridenBlockTemplates(category) {
 		blocks.push('-');
         blocks.push(blockBySelector('reportAnalogReading'));
         blocks.push(blockBySelector('reportDigitalReading'));
+	}
+
+	if (category === 'bear') {
+		blocks.push(blockBySelector('bearLeftPawWrite'));
+		blocks.push(blockBySelector('bearRightPawWrite'));
+		blocks.push(blockBySelector('bearDoWait'));
 	}
 
 	return blocks;

@@ -1252,6 +1252,26 @@ SyntaxElementMorph.prototype.labelPart = function (spec) {
                     new Point() : this.embossing;
             part.drawNew();
             break;
+        case '%leftPaw':
+            part = new SymbolMorph('leftPaw');
+            part.size = this.fontSize * 3.5;
+            part.color = new Color(255, 255, 255);
+            part.isProtectedLabel = false; // zebra colors
+            part.shadowColor = this.color.darker(this.labelContrast);
+            part.shadowOffset = MorphicPreferences.isFlat ?
+                new Point() : this.embossing;
+            part.drawNew();
+            break;
+        case '%rightPaw':
+            part = new SymbolMorph('rightPaw');
+            part.size = this.fontSize * 3.5;
+            part.color = new Color(255, 255, 255);
+            part.isProtectedLabel = false; // zebra colors
+            part.shadowColor = this.color.darker(this.labelContrast);
+            part.shadowOffset = MorphicPreferences.isFlat ?
+                new Point() : this.embossing;
+            part.drawNew();
+            break;
         case '%counterclockwise':
             part = new SymbolMorph('turnLeft');
             part.size = this.fontSize * 1.5;
@@ -7730,6 +7750,8 @@ SymbolMorph.prototype.names = [
     'cloudGradient',
     'turnRight',
     'turnLeft',
+    'leftPaw',
+    'rightPaw',
     'storage',
     'poster',
     'flash',
@@ -7917,6 +7939,10 @@ SymbolMorph.prototype.symbolCanvasColored = function (aColor) {
         return this.drawSymbolArrowRightOutline(canvas, aColor);
     case 'robot':
         return this.drawSymbolRobot(canvas, aColor);
+    case 'leftPaw':
+        return this.drawSymbolLeftPaw(canvas, aColor);
+    case 'rightPaw':
+        return this.drawSymbolRightPaw(canvas, aColor);
     default:
         return canvas;
     }
@@ -8369,6 +8395,96 @@ SymbolMorph.prototype.drawSymbolTurnLeft = function (canvas, color) {
     ctx.closePath();
     ctx.fill();
 
+    return canvas;
+};
+
+SymbolMorph.prototype.drawSymbolLeftPaw = function (canvas, color) {
+    var ctx = canvas.getContext('2d'),
+    w = canvas.width,
+    h = canvas.height,
+    l = Math.max(w / 3, 1),
+    r = w / 2;
+    ctx.strokeStyle = color.toString();
+    ctx.beginPath();
+    ctx.fillStyle = color.toString();
+    // head
+    ctx.arc(w-w/2.5, h-h/2.5, w/3.5, radians(0), radians(360));
+    // body
+    ctx.lineWidth = 1;
+    ctx.moveTo(w, h);
+    ctx.arc(w-w/2.5, h+h/2, w/1.5, radians(180), radians(360));
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+    // left hand
+    ctx.beginPath();
+    ctx.lineWidth = w/5;
+    ctx.moveTo(ctx.lineWidth/2+1,h/1.5);
+    ctx.lineTo(ctx.lineWidth/2+1,h-h/5);
+    ctx.lineTo(w/4,h);
+    ctx.lineWidth = w/4;
+    ctx.stroke();
+    ctx.closePath();
+    // paw
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    ctx.arc(ctx.lineWidth+(w/5)/2, h/1.5, (w/5)/2+1, radians(0), radians(360));
+    ctx.fill();
+    ctx.closePath();
+    // ear
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    // left
+    ctx.arc(w-w/2.5-r/2, h-h/2.5-r/2.5, (w/5)/2+1, radians(0), radians(360));
+    // right
+    ctx.arc(w-w/2.5+r/2, h-h/2.5-r/2.5, (w/5)/2+1, radians(0), radians(360));
+    ctx.fill();
+    ctx.closePath();
+    return canvas;
+};
+
+SymbolMorph.prototype.drawSymbolRightPaw = function (canvas, color) {
+    var ctx = canvas.getContext('2d'),
+    w = canvas.width,
+    h = canvas.height,
+    l = Math.max(w / 3, 1),
+    r = w / 2;
+    ctx.strokeStyle = color.toString();
+    ctx.beginPath();
+    ctx.fillStyle = color.toString();
+    // head
+    ctx.arc(w/2.5, h-h/2.5, w/3.5, radians(0), radians(360));
+    // body
+    ctx.lineWidth = 1;
+    ctx.moveTo(w, h);
+    ctx.arc(w/2.5, h+h/2, w/1.5, radians(180), radians(360));
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+    // right hand
+    ctx.beginPath();
+    ctx.lineWidth = w/5;
+    ctx.moveTo(w-ctx.lineWidth/1.5,h/1.5);
+    ctx.lineTo(w-ctx.lineWidth/1.5,h-h/5);
+    ctx.lineTo(w-w/4,h);
+    ctx.lineWidth = w/4;
+    ctx.stroke();
+    ctx.closePath();
+    // paw
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    ctx.arc(w-(w/5)/1.5, h/1.5, (w/5)/2+1, radians(0), radians(360));
+    ctx.fill();
+    ctx.closePath();
+    // ear
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    // left
+    ctx.arc(w/2.5-r/2, h-h/2.5-r/2.5, (w/5)/2+1, radians(0), radians(360));
+    // right
+    ctx.arc(w/2.5+r/2, h-h/2.5-r/2.5, (w/5)/2+1, radians(0), radians(360));
+    ctx.fill();
+    ctx.closePath();
     return canvas;
 };
 
