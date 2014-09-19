@@ -59,7 +59,7 @@ IDE_Morph.prototype.createLogo = function () {
     };
 
     this.logo.color = new Color();
-    this.logo.setExtent(new Point(300, 28)); // dimensions are fixed
+    this.logo.setExtent(new Point(400, 28)); // dimensions are fixed
     this.add(this.logo);
 };
 
