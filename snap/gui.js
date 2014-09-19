@@ -784,7 +784,7 @@ IDE_Morph.prototype.createCategories = function () {
     this.categories.silentSetWidth(this.logo.width()); // width is fixed
 
     function addCategoryButton(category) {
-        var labelWidth = 110,
+        var labelWidth = 150,
             colors = [
                 myself.frameColor,
                 myself.frameColor.darker(50),
@@ -814,7 +814,7 @@ IDE_Morph.prototype.createCategories = function () {
         );
 
         button.corner = 8;
-        button.padding = 2;
+        button.padding = 4;
         button.labelShadowOffset = new Point(-1, -1);
         button.labelShadowColor = colors[1];
         button.labelColor = myself.buttonLabelColor;
