@@ -1285,6 +1285,27 @@ SnapTranslator.dict.fi = {
     'aseta %leftPaw kohtaan %pawValue',
 
     'set %rightPaw to %pawValue':
-    'aseta %rightPaw kohtaan %pawValue'
+    'aseta %rightPaw kohtaan %pawValue',
 
+    // Arduino
+    'connect arduino at %port':
+        'Yhteys Arduinon porttiin %port',
+    'setup digital pin %digitalPin as %pinMode':
+        'Aseta digitaalinen pin %digitalPin tilaan %pinMode',
+    'set servo %servoPin to %servoValue':
+        'Aseta servo %servoPin tilaan %servoValue',
+    'set digital pin %digitalPin to %b':
+        'Aseta digitaalien pin %digitalPin arvoon %b',
+    'analog reading %analogPin':
+        'analoginen luku %analogPin',
+    'digital reading %digitalPin':
+        'digitaalinen luku %digitalPin',
+    'angle (0-180)':
+        'kulma (0-180)',
+    'stopped':
+        'pysähtynyt',
+    'clockwise':
+        'myötäpäivään',
+    'counter-clockwise':
+        'vastapäivään'
 };
