@@ -380,11 +380,11 @@ SnapSerializer.prototype.loadProjectModel = function (xmlNode) {
     StageMorph.prototype.dimensions = new Point(480, 360);
     if (model.stage.attributes.width) {
         StageMorph.prototype.dimensions.x =
-            Math.max(+model.stage.attributes.width, 480);
+            Math.max(+model.stage.attributes.width, 0);
     }
     if (model.stage.attributes.height) {
         StageMorph.prototype.dimensions.y =
-            Math.max(+model.stage.attributes.height, 180);
+            Math.max(+model.stage.attributes.height, 0);
     }
     project.stage.setExtent(StageMorph.prototype.dimensions);
     SpriteMorph.prototype.useFlatLineEnds =

@@ -974,7 +974,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
         button.setTop(button.top()
             + ((rotationStyleButtons.length - 1) * (button.height() + 2))
             );
-        myself.spriteBar.add(button);
+        //myself.spriteBar.add(button);
         if (myself.currentSprite instanceof StageMorph) {
             button.hide();
         }
@@ -992,7 +992,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
     thumbnail.setPosition(
         rotationStyleButtons[0].topRight().add(new Point(5, 3))
     );
-    this.spriteBar.add(thumbnail);
+    // this.spriteBar.add(thumbnail);
 
     thumbnail.fps = 3;
 
@@ -1008,7 +1008,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
     nameField.setWidth(100); // fixed dimensions
     nameField.contrast = 90;
     nameField.setPosition(thumbnail.topRight().add(new Point(10, 3)));
-    this.spriteBar.add(nameField);
+    //this.spriteBar.add(nameField);
     nameField.drawNew();
     nameField.accept = function () {
         var newName = nameField.getValue();
@@ -1047,7 +1047,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
 
     padlock.setPosition(nameField.bottomLeft().add(2));
     padlock.drawNew();
-    this.spriteBar.add(padlock);
+    //this.spriteBar.add(padlock);
     if (this.currentSprite instanceof StageMorph) {
         padlock.hide();
     }
@@ -1127,7 +1127,7 @@ IDE_Morph.prototype.createSpriteBar = function () {
         each.refresh();
     });
     this.spriteBar.tabBar = tabBar;
-    this.spriteBar.add(this.spriteBar.tabBar);
+    //this.spriteBar.add(this.spriteBar.tabBar);
 
     this.spriteBar.fixLayout = function () {
         this.tabBar.setLeft(this.left());
