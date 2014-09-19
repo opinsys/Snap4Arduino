@@ -1,2 +1,2 @@
 #!/bin/sh
-./nw app.nw
+./nw app.nw $1

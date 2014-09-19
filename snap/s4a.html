@@ -65,6 +65,14 @@
 					win.menu = nativeMenuBar;
 			}
 
+
+                        var gui = require('nw.gui');
+
+                        if (gui.App.argv.indexOf("--devtools") !== -1) {
+                            var Window = gui.Window.get();
+                            Window.showDevTools();
+                        }
+
 		</script>
 	</head>
 	<body style="margin: 0;">
