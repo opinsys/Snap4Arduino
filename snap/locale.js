@@ -56,7 +56,7 @@ function localize(string) {
 // Localizer /////////////////////////////////////////////////////////////
 
 function Localizer(language, dict) {
-    this.language = language || 'en';
+    this.language = language || 'fi';
     this.dict = dict || {};
 }
 
