@@ -235,6 +235,10 @@ IDE_Morph.prototype.init = function (isAutoFill) {
     CommentMorph.prototype.refreshScale();
     SpriteMorph.prototype.initBlocks();
 
+    var language = "fi";
+    this.saveSetting('language', language);
+
+    this.applySavedSettings();
 };
 
 IDE_Morph.prototype.openIn = function (world) {
