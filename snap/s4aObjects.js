@@ -187,13 +187,8 @@ SpriteMorph.prototype.originalBlockTemplates = SpriteMorph.prototype.blockTempla
 
 SpriteMorph.prototype.categories =
     [
-        'motion',
         'control',
-        'looks',
-        'sensing',
-        'sound',
         'operators',
-        'pen',
         'variables',
         'lists',
 		'arduino',
