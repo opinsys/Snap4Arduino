@@ -228,6 +228,13 @@ IDE_Morph.prototype.init = function (isAutoFill) {
 
     // override inherited properites:
     this.color = this.backgroundColor;
+
+    var zoom = 1.4;
+    this.saveSetting('zoom', zoom);
+    SyntaxElementMorph.prototype.setScale(Math.min(zoom, 12));
+    CommentMorph.prototype.refreshScale();
+    SpriteMorph.prototype.initBlocks();
+
 };
 
 IDE_Morph.prototype.openIn = function (world) {
