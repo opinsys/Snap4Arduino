@@ -1,2 +1,3 @@
 #!/bin/sh
-./nw app.nw $1
+
+/opt/Snap4Arduino/nw /opt/Snap4Arduino/app.nw $1
