@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Snap4Arduino
+GenericName=Bear programming
+Exec=Snap4Arduino
+Icon=Snap4Arduino
+Terminal=false
+Categories=Development;Engineering;Electronics;
+Keywords=embedded electronics;electronics;avr;microcontroller;arduino
