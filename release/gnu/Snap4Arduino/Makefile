@@ -4,6 +4,13 @@ install:
 	mkdir -p $(DESTDIR)/opt/Snap4Arduino
 	mkdir -p $(DESTDIR)/usr/bin/
 	mkdir -p $(DESTDIR)/usr/share/applications/
+	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/16x16/apps/
+	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/24x24/apps/
+	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/32x32/apps/
+	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/48x48/apps/
+	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/128x128/apps/
+	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/256x256/apps/
+
 	cp -a nw nw.pak app.nw $(DESTDIR)/opt/Snap4Arduino
 	install -m 655 -t $(DESTDIR)/usr/bin/ \
 		Snap4Arduino
