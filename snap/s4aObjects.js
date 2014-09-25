@@ -89,7 +89,7 @@ SpriteMorph.prototype.arduinoConnect = function(port) {
 	
 	var sprite = this;
 
-	sprite.arduinoShowMessage("Connecting board at port\n"+port);
+	sprite.arduinoShowMessage(localize("Connecting board at port\n") + port);
 	sprite.arduino.connecting = true;
 
 	sprite.arduino.board = new world.arduino.firmata.Board(port, function(err) { 
