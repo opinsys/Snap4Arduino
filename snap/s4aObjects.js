@@ -341,6 +341,8 @@ function overridenBlockTemplates(category) {
 	}
 
 	if (category === 'bear') {
+		blocks.push(arduinoConnectButton);
+                blocks.push(arduinoDisconnectButton);
 		blocks.push(blockBySelector('bearLeftPawWrite'));
 		blocks.push(blockBySelector('bearRightPawWrite'));
 		blocks.push(blockBySelector('bearDoWait'));
