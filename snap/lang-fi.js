@@ -1307,5 +1307,9 @@ SnapTranslator.dict.fi = {
     'clockwise':
         'myötäpäivään',
     'counter-clockwise':
-        'vastapäivään'
+        'vastapäivään',
+    'Board connected':
+        'Yhteys muodostettu',
+    'An Arduino board has been connected. Happy prototyping!':
+        'Yhteys Nalleen on nyt kunnossa. Hauskoja hetkiä ohjelmoinnin parissa!'
 };

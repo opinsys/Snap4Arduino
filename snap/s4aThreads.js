@@ -14,7 +14,8 @@ Process.prototype.connectArduino = function (port) {
 					sprite.arduino.connecting = false;
 					sprite.arduino.justConnected = true;
 					sprite.arduino.board.connected = true;
-					inform('Board connected', 'An Arduino board has been connected. Happy prototyping!');   
+					inform(localize('Board connected'),
+                                               localize('An Arduino board has been connected. Happy prototyping!'));
 				}
 				return
 			})
