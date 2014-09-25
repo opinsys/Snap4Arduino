@@ -137,6 +137,12 @@ SpriteMorph.prototype.arduinoConnect = function(port) {
 			sprite.arduino.board.connected = true;
 
 			sprite.arduinoHideMessage();
+
+                        // Set pin 2 and 4 to SERVO mode
+                        // See https://github.com/opinsys/ohjelmointi-opetuksessa/blob/master/kytkentakaaviot/nalle_rakennussarja_bb.jpg
+                        sprite.arduino.board.pinMode(2, sprite.arduino.board.MODES.SERVO);
+                        sprite.arduino.board.pinMode(4, sprite.arduino.board.MODES.SERVO);
+
 			inform(sprite.name, localize('An Arduino board has been connected. Happy prototyping!'));   
 		} else {
 			sprite.arduinoHideMessage();
