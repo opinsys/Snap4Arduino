@@ -1308,8 +1308,16 @@ SnapTranslator.dict.fi = {
         'myötäpäivään',
     'counter-clockwise':
         'vastapäivään',
+    'Connect Arduino':
+        'Yhdistä Nalleen',
+    'Disconnect Arduino':
+        'Katkaise yhteys Nalleen',
     'Board connected':
         'Yhteys muodostettu',
+    'Connecting board at port\n':
+        'Muodostetaan yhteys portiin\n',
+    'Board was disconnected from port\n':
+        'Yhtes on katkaistu portista\n',
     'An Arduino board has been connected. Happy prototyping!':
         'Yhteys Nalleen on nyt kunnossa. Hauskoja hetkiä ohjelmoinnin parissa!'
 };
