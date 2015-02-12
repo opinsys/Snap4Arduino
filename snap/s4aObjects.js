@@ -252,7 +252,7 @@ SpriteMorph.prototype.initBlocks = function() {
 		spec: 'set PWM pin %pwmPin to %n'
 	};
 
-	this.blocks.bearLeftPawWrite
+	this.blocks.bearLeftPawWrite =
 	{
 		only: SpriteMorph,
 		type: 'command',
