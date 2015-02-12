@@ -150,6 +150,9 @@ SpriteMorph.prototype.init = function(globals) {
 				myself.arduino.justConnected = true;
 				myself.arduino.board.connected = true;
 	
+				myself.arduino.board.pinMode(2, myself.arduino.board.MODES.SERVO);
+				myself.arduino.board.pinMode(4, myself.arduino.board.MODES.SERVO);
+
 				myself.arduino.hideMessage();
 				ide.inform(myself.name, localize('An Arduino board has been connected. Happy prototyping!'));   
 			} else {
