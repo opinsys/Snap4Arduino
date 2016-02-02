@@ -1315,9 +1315,9 @@ SnapTranslator.dict.fi = {
     'Board connected':
         'Yhteys muodostettu',
     'Connecting board at port\n':
-        'Muodostetaan yhteys portiin\n',
+        'Muodostetaan yhteys porttiin\n',
     'Board was disconnected from port\n':
-        'Yhtes on katkaistu portista\n',
+        'Yhteys on katkaistu portista\n',
     'An Arduino board has been connected. Happy prototyping!':
         'Yhteys Nalleen on nyt kunnossa. Hauskoja hetkiä ohjelmoinnin parissa!'
 
